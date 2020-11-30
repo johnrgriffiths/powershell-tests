@@ -20,8 +20,7 @@ pipeline {
       steps {
         script {
           def output = powershell (
-            script: "${buildParams.powershellFile}",
-            returnStdout: true
+            script: "${buildParams.powershellFile}"
           )
           println output
         }
