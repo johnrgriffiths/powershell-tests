@@ -12,10 +12,9 @@ pipeline {
     stage("Test") {
       steps {
         script {
-          def command = "pwd"
+          def command = "dir"
           def output = bat (
-            script: command,
-            returnStdOut: true
+            script: command
           )
           println output
         }
