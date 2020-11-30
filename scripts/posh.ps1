@@ -1,3 +1,3 @@
-write-error "Doing one thing"
-write-error "Doing another"
+[system.console]::WriteLine("Step 1")
+[system.console]::WriteLine("Step 2")
 exit 0
