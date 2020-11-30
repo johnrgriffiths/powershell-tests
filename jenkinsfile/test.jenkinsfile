@@ -3,7 +3,7 @@ Map buildParams = [
     nodeLabel: "master"
 ]
 
-buildParams.powershellFile = "${buildParams.workspace}\\scripts\\posh.ps1"
+buildParams.powershellFile = "\"${buildParams.workspace}\\scripts\\posh.ps1\""
 
 pipeline {
   agent {
