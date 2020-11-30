@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    node {
+      label 'Build-Slaves-B'
+      customWorkspace "D:\\Jenkins\\Workspace\\${env.JOB_BASE_NAME}"
+    }
+  }
   options {
     buildDiscarder(logRotator(daysToKeepStr: '1', numToKeepStr: '1'))
   }
