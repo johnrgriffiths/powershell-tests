@@ -1,6 +1,6 @@
 Map buildParams = [
     workspace: "D:\\Jenkins\\Workspace\\${env.JOB_BASE_NAME}",
-    nodelabel: "Build-Slaves-B"
+    nodeLabel: "master"
 ]
 
 buildParams.powershellFile = "${buildParams.workspace}\\scripts\\posh.ps1"
