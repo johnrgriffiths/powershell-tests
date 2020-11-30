@@ -1,8 +1,15 @@
+Map buildParams = [
+    workspace: "D:\\Jenkins\\Workspace\\${env.JOB_BASE_NAME}",
+    nodelabel: "Build-Slaves-B"
+]
+
+buildParams.powershellFile = "${buildParams.workspace}\\scripts\\posh.ps1"
+
 pipeline {
   agent {
     node {
-      label 'Build-Slaves-B'
-      customWorkspace "D:\\Jenkins\\Workspace\\${env.JOB_BASE_NAME}"
+      label "${buildParams.nodeLabel}"
+      customWorkspace "${buildParams.workspace}"
     }
   }
   options {
@@ -12,9 +19,10 @@ pipeline {
     stage("Test") {
       steps {
         script {
-          def command = "dir"
+          def command = "powershell -executionpolicy bypass -file ${buildParams.powershellFile}"
           def output = bat (
-            script: command
+            script: command,
+            returnStdout: true
           )
           println output
         }
