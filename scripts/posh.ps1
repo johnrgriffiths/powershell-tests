@@ -1,3 +1,3 @@
-write-host "Doing one thing"
-write-host "Doing another"
-exit 1
+write-error "Doing one thing"
+write-error "Doing another"
+exit 0
