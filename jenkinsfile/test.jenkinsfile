@@ -19,9 +19,8 @@ pipeline {
     stage("Test") {
       steps {
         script {
-          def command = "powershell -executionpolicy bypass -file ${buildParams.powershellFile}"
-          def output = bat (
-            script: command,
+          def output = powershell (
+            script: "${buildParams.powershellFile}",
             returnStdout: true
           )
           println output
