@@ -1,3 +1,3 @@
-[system.console]::WriteLine("Step 1")
-[system.console]::WriteLine("Step 2")
+write-verbose "Step 1"
+write-verbose "Step 2"
 exit 0
