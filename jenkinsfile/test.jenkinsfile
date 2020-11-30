@@ -1,5 +1,5 @@
 Map buildParams = [
-    workspace: "D:\\Jenkins\\Workspace\\${env.JOB_BASE_NAME}",
+    workspace: "D:\\Jenkins\\workspace\\${env.JOB_BASE_NAME}",
     nodeLabel: "master"
 ]
 
