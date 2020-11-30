@@ -1,0 +1,20 @@
+pipeline {
+  agent any
+  options {
+    buildDiscarder(logRotator(daysToKeepStr: '1', numToKeepStr: '1'))
+  }
+  stages {
+    stage("Test") {
+      steps {
+        script {
+          def command = "pwd"
+          def output = bat (
+            script: command,
+            returnStdOut: true
+          )
+          println output
+        }
+      }
+    }
+  }
+}
