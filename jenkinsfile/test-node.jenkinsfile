@@ -2,14 +2,12 @@ node() {
   def workspace = pwd()
   def powershellFile = "\"${workspace}\\scripts\\posh.ps1\""
 
-  stages {
-    stage('Call Powershell') {
-      def result = powershell (
-        script: powershellFile,
-        returnStdout: true
-      ).trim()
+  stage('Call Powershell') {
+    def result = powershell (
+      script: powershellFile,
+      returnStdout: true
+    ).trim()
 
-      println result
-    }
+    println result
   }
 }
