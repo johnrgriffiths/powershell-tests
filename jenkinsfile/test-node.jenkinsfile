@@ -2,6 +2,8 @@ node() {
   def workspace = pwd()
   def powershellFile = "\"${workspace}\\scripts\\posh.ps1\""
 
+  echo workspace
+  
   stage('Call Powershell') {
     def result = powershell (
       script: powershellFile,
