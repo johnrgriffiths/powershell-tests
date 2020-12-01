@@ -13,7 +13,7 @@ node() {
 
   stage('Embedded powershell') {
     powershell '''
-      write-error "Fail fail fail"
+      write-verbose "Fail fail fail"
     '''
 
   }
