@@ -2,12 +2,18 @@ node() {
   def workspace = pwd()
   def powershellFile = "\"${workspace}\\scripts\\posh.ps1\""
 
+  lock("${workspace}") {
+    ws("${workspace}") {
+      checkout scm
+    }
+  }
+
   echo workspace
 
   stage("View workspace") {
     bat 'dir'
   }
-  
+
   stage('Call Powershell') {
     def result = powershell (
       script: powershellFile,
