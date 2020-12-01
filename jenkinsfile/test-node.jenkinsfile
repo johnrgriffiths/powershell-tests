@@ -12,9 +12,9 @@ node() {
   }
 
   stage('Embedded powershell') {
-    powerhshell '''
+    powershell '''
       write-error "Fail fail fail"
     '''
-    
+
   }
 }
