@@ -3,6 +3,10 @@ node() {
   def powershellFile = "\"${workspace}\\scripts\\posh.ps1\""
 
   echo workspace
+
+  stage("View workspace") {
+    bat 'dir'
+  }
   
   stage('Call Powershell') {
     def result = powershell (
