@@ -1,3 +1,5 @@
+$VerbosePreference = 'Continue'
+
 function log($this, $status=0) {
   if($status -eq 1) {
     write-error $this
@@ -5,7 +7,7 @@ function log($this, $status=0) {
     exit 1
   }
   else {
-    write-host $this
+    write-verbose $this
     [Console]::Out.Flush()
   }
 }
