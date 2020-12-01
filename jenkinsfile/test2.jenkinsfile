@@ -1,0 +1,12 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Deploy') {
+            steps {
+                powershell 'Write-Verbose \'This is the verbose stream\''
+                powershell 'Write-Information \'This is the info stream\''
+            }
+        }
+    }
+}
