@@ -10,4 +10,11 @@ node() {
 
     println result
   }
+
+  stage('Embedded powershell') {
+    powerhshell '''
+      write-error "Fail fail fail"
+    '''
+    
+  }
 }
